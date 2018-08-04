@@ -1,4 +1,23 @@
- const Discord = require('discord.js');
+ 
+const Discord = require('discord.js');
+const client = new Discord.Client();
+const prefix = "!";
+client.on('ready', () => {
+ console.log('Logged in as ${client.user.tag}!');
+client.user.setActivity('!help',{ type: 'streaming'}) 
+});
+
+
+
+
+
+
+
+
+
+
+
+const Discord = require('discord.js');
 const devs = ['283355378811666435'];
 var prefix = "!";
 const adminprefix = "+"
