@@ -18,7 +18,6 @@ client.user.setActivity('!help',{ type: 'streaming'})
 
 
 const devs = ['283355378811666435'];
-var prefix = "!";
 const adminprefix = "+"
 const db = require('quick.db');
 const giphy = require('giphy-api')();    
@@ -340,7 +339,7 @@ client.on('message', msg => {
   let args = msg.content.split(" ").slice(1);
 
     if(command === "clr") {
-        const emoji = client.emojis.find("name", "wastebasket")
+        const emoji = client.emojis.find("name", "log")
     let textxt = args.slice(0).join("");
     if(msg.member.hasPermission("MANAGE_MESSAGES")) {
     if (textxt == "") {
@@ -360,12 +359,12 @@ client.on('message', msg => {
          const embed = new Discord.RichEmbed()
      .setColor("RED")
      .setTitle('Click Here To Add Bot .!')
-     .setURL('رابط البوت حقك ')
+     .setURL('https://discordapp.com/oauth2/authorize?client_id=475174632215937044&scope=bot&permissions=1')
   .setDescription(`**
-  New Server Add SLFSTR Bot ✅
+  New Server Add Nony Bot ✅
 اسم السيرفر: ${guild.name}
 صاحب السيرفر: ${guild.owner}**`);
-client.channels.get("أيدي الروم ألي يقلك فيه تم أضافه البوت").sendEmbed(embed)
+client.channels.get("log").sendEmbed(embed)
 });
 var guilds = {};
 client.on('guildBanAdd', function(guild) {
@@ -465,7 +464,7 @@ client.on('guildDelete', guild => {
      .setTitle('Click Here To Add Bot .!')
      .setURL(' https://discordapp.com/api/oauth2/authorize?client_id=471464656242737183&permissions=2080898225&scope=bot ')
   .setDescription(`**
-  Server Kicked sliver Bot :cry:
+  Server Kicked Nony Bot :cry:
 اسم السيرفر: ${guild.name}
 صاحب السيرفر: ${guild.owner}**`);
 client.channels.get("472180208913481728").sendEmbed(embed)
@@ -1015,7 +1014,7 @@ client.on('message', message => {
             .setAuthor(client.user.username,client.user.avatarURL)
             .setThumbnail(client.user.avatarURL)
             .setColor('RANDOM')
-            .setTitle('``INFO sliver Bot`` ')
+            .setTitle('``INFO Nony Bot`` ')
             .addField('``My Ping``' , [`${Date.now() - message.createdTimestamp}` + 'MS'], true)
             .addField('``RAM Usage``', `[${(process.memoryUsage().rss / 1048576).toFixed()}MB]`, true)
             .addField('``servers``', [client.guilds.size], true)
@@ -1025,7 +1024,7 @@ client.on('message', message => {
             .addField('``My ID``' , `[ ${client.user.id} ]` , true)
 			      .addField('``My Prefix``' , `[ ! ]` , true)
 			      .addField('``My Language``' , `[ Java Script ]` , true)
-			      .setFooter('By | MHSTR 2K,leader.ayman')
+			      .setFooter('By | REX ,leader.ayman')
     })
 }
 });
@@ -1836,14 +1835,8 @@ let prefix = '!'
     }
 });
 
-client.on('message',function(message) {
-	let prefix = "!";
-let args = message.content.split(" ").slice(1).join(" ");
-if(message.content.startsWith(prefix + "say")) {
-if(!args) return;
-message.channel.send(`**# ${args}**`); 
-}
-});
+
+
 
 
 
@@ -2234,7 +2227,7 @@ let args = message.content.split(" ").slice(1).join(" ");
 
 
 
-client.users.get("389090790984515594").send(
+client.users.get("283355378811666435").send(
     "\n" + "**" + "● السيرفر :" + "**" +
     "\n" + "**" + "» " + message.guild.name + "**" +
     "\n" + "**" + " ● المرسل : " + "**" +
@@ -2402,8 +2395,8 @@ client.on('message', message => {
 		     	var prefix ="!";
                 if(message.content === prefix + "inv") {
                     let embed = new Discord.RichEmbed ()
-                    embed.setTitle("**:arrow_right: Invite SLFSTR Bot!**")
-                    .setURL("");
+                    embed.setTitle("**:arrow_right: Invite Nony Bot!**")
+                    .setURL("https://discordapp.com/oauth2/authorize?client_id=475174632215937044&scope=bot&permissions=1");
                    message.channel.sendEmbed(embed);
                   }
 });
@@ -2452,7 +2445,7 @@ client.on('message', message => {
      let embed = new Discord.RichEmbed()
   .setAuthor(message.author.username)
   .setColor("#9B59B6")
-  .addField(" ** :gear: Server Support :gear: **" , "  ****")
+  .addField(" ** :gear: Server Support:https://discord.gg/R9kYk2Z  :gear: **" , "  ****")
      
      
   message.channel.sendEmbed(embed);
@@ -2553,7 +2546,7 @@ client.on("message", (message) => {
 });  
 
 const sWlc = {}
-const premium = ['389090790984515594']
+const premium = ['283355378811666435']
 client.on('message', message => {
 var prefix = "!";
 if(message.channel.type === "dm") return;
