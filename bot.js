@@ -17,12 +17,10 @@ client.user.setActivity('!help',{ type: 'streaming'})
 
 
 
-const Discord = require('discord.js');
 const devs = ['283355378811666435'];
 var prefix = "!";
 const adminprefix = "+"
 const db = require('quick.db');
-const client = new Discord.Client();   
 const giphy = require('giphy-api')();    
 const googl = require('goo.gl');  
 const translate = require('google-translate-api');   
