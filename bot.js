@@ -2548,7 +2548,55 @@ client.on("message", (message) => {
 
  
 
+client.on('message', message => {
 
+ if (message.content.startsWith("welcome")) {
+
+                                 var mentionned = message.mentions.users.first();
+
+             var mentionavatar;
+
+               if(mentionned){
+
+                   var mentionavatar = mentionned;
+
+               } else {
+
+                   var mentionavatar = message.author;
+
+                   
+
+               }
+
+               let bot;
+
+               if(message.author.bot) {
+
+                   bot = 'Bot'
+
+               } else {
+
+                   bot = 'User'
+
+               }
+
+  var EsTeKnAN = new Discord.RichEmbed()
+
+  .setColor('RANDOM')
+
+  .setThumbnail(`${mentionavatar.avatarURL}`)
+
+  .addField("***شكرا الانضمامك الينا***" ,mentionavatar.username )
+
+  .setDescription('***مرحبا بك كثر النجوم الساطعة وكثر الورود الفائحة التي تفوح بأزكى العطور وكثر ما تكتب الأقلام من الحروف والعبارات. ***')
+
+  .setImage('https://www.askideas.com/media/13/Welcome-Sign-For-Front-Door.jpg')
+
+   message.channel.sendEmbed(EsTeKnAN);
+
+  }
+
+});
 
 
               
