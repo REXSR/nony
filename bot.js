@@ -2469,7 +2469,7 @@ m.delete();
 });
 omar.reply("`تم حذف جميع الرتب بنجاح`")
 }
-});
+};
 
 client.on('message', message => {
 	var prefix = "!";
