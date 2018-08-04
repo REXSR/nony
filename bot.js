@@ -2628,4 +2628,4 @@ client.on('message', message => {
 	
 	
 	
-client.login(process.env.BOT_TOKEN);
+client.login(process.env.BOT_TOKEN);  //اياكككك تلعب هنا لا تحط توكنك هنا
