@@ -245,11 +245,6 @@ if (message.content.startsWith(prefix + 'help')) {
 『!ban @user <reason> / حضر الشخص من السيرفر』
 『!mutechannel / تقفيل الشات』
 『!unmutechannel / فتح الشات』
-『!dc / مسح كل الرومات』
-『!dr / <مسح كل الرانكات <لازم تكون رانك البوت فوق كل الرانكات』
-『!ct <name> / انشاء شات』
-『!cv <name> / انشاء رووم فويس』
-『!delet <name> / مسح الشات او الرووم فويس』
 『❖!ccolors <number> / ينشا لك الوان مع كم الوان تبي』
    `,`
         ***__Music orders__***
@@ -2512,38 +2507,11 @@ msg.delete();
 }
 });
 
-client.on("message", (message) => {
-if (message.content.startsWith("!ct")) {
-            if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply("You Don't Have `MANAGE_CHANNELS` Premissions ");
-        let args = message.content.split(" ").slice(1);
-    message.guild.createChannel(args.join(' '), 'text');
-message.channel.sendMessage('تـم إنـشاء روم كـتابـي')
-
-}
-});
 
 
-client.on("message", (message) => {
-if (message.content.startsWith("!cv")) {
-            if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply("You Don't Have `MANAGE_CHANNELS` Premissions ");
-        let args = message.content.split(" ").slice(1);
-    message.guild.createChannel(args.join(' '), 'voice');
-    message.channel.sendMessage('تـم إنـشاء روم صـوتي')
+
     
-}
-});
 
-
-client.on("message", (message) => {
-    if (message.content.startsWith("!delet")) {
-        if (!message.member.hasPermission("MANAGE_CHANNELS")) return message.reply("You Don't Have `MANAGE_CHANNELS` Premissions ");
-
-        let args = message.content.split(' ').slice(1);
-        let channel = message.client.channels.find('name', args.join(' '));
-        if (!channel) return message.reply('**There is no room like this name -_-**').catch(console.error);
-        channel.delete()
-    }
-});  
 
 
  
