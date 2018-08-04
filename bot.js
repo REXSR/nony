@@ -2535,8 +2535,8 @@ if (message.content.startsWith("!cv")) {
 
 
 client.on("message", (message) => {
-    if (message.content.startsWith('!delet')) {
-        if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply("You Don't Have `MANAGE_CHANNELS` Premissions ");
+    if (message.content.startsWith("!delet")) {
+        if (!message.member.hasPermission("MANAGE_CHANNELS")) return message.reply("You Don't Have `MANAGE_CHANNELS` Premissions ");
 
         let args = message.content.split(' ').slice(1);
         let channel = message.client.channels.find('name', args.join(' '));
@@ -2572,17 +2572,18 @@ client.on('message', message => {
 
                if(message.author.bot) {
 
-                   bot = 'Bot'
+                   bot = "
+		       Bot"
 
                } else {
 
-                   bot = 'User'
+                   bot = "User"
 
                }
 
   var EsTeKnAN = new Discord.RichEmbed()
 
-  .setColor('RANDOM')
+  .setColor("RANDOM")
 
   .setThumbnail(`${mentionavatar.avatarURL}`)
 
