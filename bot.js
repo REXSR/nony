@@ -2644,7 +2644,7 @@ client.on("guildMemberAdd", member => {
       })
      
       }
-      );
+      };
 
 
 
