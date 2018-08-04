@@ -2642,7 +2642,7 @@ client.on("guildMemberAdd", member => {
       
       })
       })
-});
+})
 
 
 
