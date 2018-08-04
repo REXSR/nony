@@ -2572,8 +2572,7 @@ client.on('message', message => {
 
                if(message.author.bot) {
 
-                   bot = "
-		       Bot"
+                   bot = "Bot"
 
                } else {
 
