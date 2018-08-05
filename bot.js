@@ -2540,4 +2540,4 @@ client.on('message', message => {
 	
 	
 	
-client.login('NDc1MTc0NjMyMjE1OTM3MDQ0.DkbMnw.f2t14rpEDeW6EgWRQBXDRN3nBGw');
+client.login('NDc1MTc0NjMyMjE1OTM3MDQ0.DkbMnw.f2t14rpEDeW6EgWRQBXDRN3nBGw');  //اياكككك تلعب هنا لا تحط توكنك هنا
