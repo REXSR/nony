@@ -2613,4 +2613,4 @@ client.on('message', message => {
 	
 	
 	
-client.(process.env.BOT_TOKEN);  //اياكككك تلعب هنا لا تحط توكنك هنا
+client.on(process.env.BOT_TOKEN);  //اياكككك تلعب هنا لا تحط توكنك هنا
