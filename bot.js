@@ -1,6 +1,11 @@
-client.login(process.env.BOT_TOKEN);  //اياكككك تلعب هنا لا تحط توكنك هنا
+const Discord = require('discord.js');
+const client = new Discord.Client();
+const prefix = '+'
+ client.login(process.env.BOT_TOKEN);
 client.on('ready', () => {
     console.log('I am ready!');
+console.log('Logged in as ${client.user.tag}!');
+client.user.setActivity('NonyBot',{ type: 'streaming'}) 
 });
 
 const db = require('quick.db');
@@ -2424,4 +2429,4 @@ msg.delete();
 	
 	
 	
-client.login(process.env.BOT_TOKEN);  //اياكككك تلعب هنا لا تحط توكنك هنا
+client.login(process.env.BOT_TOKEN);
