@@ -97,6 +97,7 @@ if (message.content.startsWith(prefix + 'help')) {
     })
     }
 }); 
+
 client.on('message', message => {
      if (message.content === (prefix + "help")) {
      let embed = new Discord.RichEmbed()
