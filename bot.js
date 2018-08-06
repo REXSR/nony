@@ -8,7 +8,6 @@ client.user.setActivity('!help !inv', { type: 'WATCHING' })
 
 client.on('message', message => {
 if (message.content.startsWith(prefix + 'help')) { 
-    let pages = [`
 ***__وصف عن البوت__***
 **
 :gem:  البوت فيه كثير ميزات حلوة و جميلة
