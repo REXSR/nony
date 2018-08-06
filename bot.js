@@ -5,7 +5,6 @@ const prefix = '+'
 client.on('ready', () => {
     console.log('I am ready!');
 console.log('Logged in as ${client.user.tag}!');
-client.user.setActivity('NonyBot',{ type: 'streaming'}) 
 });
 
 const db = require('quick.db');
