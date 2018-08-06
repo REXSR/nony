@@ -216,9 +216,7 @@ if (message.content.startsWith(prefix + 'help')) {
 『!invite-codes/يعرض لك روابط الانفايتات حكك في السيرفر 』
 『!short/يختصر لك رابط كبير الى رابط صغير』
 『!tag/يكتب لك الكلمة بشكل جميل وكبير』
-『!google/للبحث في قوقل عن طريق الدسكورد』
 『!perms/يعرض لك برمشناتك بالسيرفر』
-『!za5/يزخرف لك كلمة او جملة』
 『!rooms/يعرض لك كل الرومات الي بالسيرفر مع عددها』
 『!roles/يعرض لك كل الرانكات بالسيرفر بشكل جميل』
 『!emojilist/يعرض لك كل الايموجيات الي بالسيرفر』
@@ -1151,19 +1149,8 @@ if(!args[0]) return message.reply('مرجو كتابة نص الدي تريد');
 }
 });
 
-client.on('message', message => {
-	var prefix ="!";
- let args = message.content.split(' ').slice(1);
-    if(message.content.startsWith(prefix + 'google')) {
-    const input = args.join(' ');
 
-google({ query: input, disableConsole: true }).then(results => {
-    return message.channel.send(`\n\n**Title**: ${results[0].title}\n***Link***: ${results[0].link}\nDescription: ${results[0].snippet}`);
-}).catch(error => {
-    if (error) throw error;
-});
 
-}});
  
 function getValue(key, array) {
   for (var el in array) {
@@ -1599,25 +1586,14 @@ if (message.content.startsWith(prefix + 'perms')) {
 });
 
 
- client.on('message', message => {
-	 var prefix = "!";
-  if (message.author.bot) return;
-  if (!message.content.startsWith(prefix)) return;
+ 
 
-  let command = message.content.split(" ")[0];
-  command = command.slice(prefix.length);
-
-  let args = message.content.split(" ").slice(1);
   
  
 
-if (command == "za5") {
-    let say = new Discord.RichEmbed()
-        .setTitle('Text emboss :')
-   message.channel.send(`\n ${zalgo(args.join(' '))}`);
-  }
+  
 
-});
+
 
 client.on("message", message => {
 	var prefix = "!";
