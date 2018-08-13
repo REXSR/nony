@@ -430,15 +430,7 @@ message.author.sendEmbed(embed)
 }); 
 
 
-client.on('message', message => {
-     if (message.content === (prefix + "help")) {
-     let embed = new Discord.RichEmbed()
-  .setAuthor(message.author.username)
-  .setColor("#8650a7")
-  .addField("Done" , " تــــم ارســالك في الخــاص")
-  message.channel.sendEmbed(embed);
-    }
-});
+
 
 
 
@@ -491,15 +483,6 @@ message.author.sendEmbed(embed)
 }
 }); 
 
-client.on('message', message => {
-     if (message.content === (prefix + "help")) {
-     let embed = new Discord.RichEmbed()
-  .setAuthor(message.author.username)
-  .setColor("#8650a7")
-  .addField("Done" , " تــــم ارســالك في الخــاص")
-  message.channel.sendEmbed(embed);
-    }
-});
 
 
 
@@ -650,8 +633,6 @@ message.channel.sendEmbed(cat);
 });
 
 client.on('message', message => {
-var prefix = "!";
-
     if (message.author.id === client.user.id) return;
     if (message.guild) {
    let embed = new Discord.RichEmbed()
@@ -719,7 +700,6 @@ client.on('message', message => {
     }
 });
 
-  var prefix = "!";
   const HeRo = new Discord.Client();
   client.on('message', message => {
       if (message.content === prefix + "date") {
@@ -761,7 +741,6 @@ client.on('message', message => {
 
 
 
-var prefix = "!"
 
 client.on('message', message => {
     if (message.author.bot) return;
@@ -812,7 +791,6 @@ client.on('ready', () => {
 }); 
 
 client.on("message", message => {
-    var prefix = "!";
             var args = message.content.substring(prefix.length).split(" ");
             if (message.content.startsWith(prefix + "clear")) {
  if (!args[1]) {
