@@ -28,18 +28,12 @@ client.on("message", message => {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .addField("『Bot 1 | Nano Bot』 『اسم البوت』", true)
-      
-      
+      .addField("『مصمم البوت REX』", true)
       .addField("『!help^』😘『اذا تبي جميع الاوامر مع اوامر اضافية』😵", true)
-      
 	    .addField("『!help^^』👻『اذا تبي الاوامر العامة』😳", true)
-	    
       .addField("『!help^^^』😮『اذا تبي  الاوامر الادارية』🤒", true)
-      
       .addField("『🤑』『قريبا سوف نضيف المزيد و المزيد من الاوامر 』『😉』", true)
-      
   message.channel.sendMessage({embed});
-
  }
 });
 
