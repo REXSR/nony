@@ -12,7 +12,7 @@ client.on('message', msg => {
 });
 
 client.on('ready',  () => {
-  console.log('By : عنان اوفر ');
+  console.log('By : REX YOOOOOOOOOOOO ');
   console.log(`Logged in as * [ " ${client.user.username} " ] servers! [ " ${client.guilds.size} " ]`);
   console.log(`Logged in as * [ " ${client.user.username} " ] Users! [ " ${client.users.size} " ]`);
   console.log(`Logged in as * [ " ${client.user.username} " ] channels! [ " ${client.channels.size} " ]`);
@@ -366,6 +366,19 @@ message.author.sendEmbed(embed)
 }
 }); 
 
+client.on('message', message => {
+     if (message.content === (prefix + "help")) {
+     let embed = new Discord.RichEmbed()
+  .setAuthor(message.author.username)
+  .setColor("#8650a7")
+  .addField("Done" , " تــــم ارســالك في الخــاص")
+  message.channel.sendEmbed(embed);
+    }
+});
+
+
+
+
 
 
 client.on("message", message => {
@@ -425,6 +438,18 @@ message.author.sendEmbed(embed)
 }); 
 
 
+client.on('message', message => {
+     if (message.content === (prefix + "help")) {
+     let embed = new Discord.RichEmbed()
+  .setAuthor(message.author.username)
+  .setColor("#8650a7")
+  .addField("Done" , " تــــم ارســالك في الخــاص")
+  message.channel.sendEmbed(embed);
+    }
+});
+
+
+
 
 client.on("message", message => {
  if (message.content === "!help^^") {
@@ -474,6 +499,18 @@ message.author.sendEmbed(embed)
 
 }
 }); 
+
+client.on('message', message => {
+     if (message.content === (prefix + "help")) {
+     let embed = new Discord.RichEmbed()
+  .setAuthor(message.author.username)
+  .setColor("#8650a7")
+  .addField("Done" , " تــــم ارســالك في الخــاص")
+  message.channel.sendEmbed(embed);
+    }
+});
+
+
 
 
 client.on('message', message => {
