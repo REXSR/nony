@@ -1239,7 +1239,6 @@ client.on("guildMemberAdd", member => {
 });
 
 
-const client = require("discord.js");
 const client = new d.Client();
 var prefix ="!"//:3 غيره بكيفك
 var colors = new Array(100);
