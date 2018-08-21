@@ -1239,7 +1239,6 @@ client.on("guildMemberAdd", member => {
 });
 
 
-var prefix ="!"//:3 غيره بكيفك
 var colors = new Array(100);
 
 client.on("message", (message) => {
