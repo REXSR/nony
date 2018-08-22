@@ -27,7 +27,7 @@ client.on("message", message => {
    message.react("😜")
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
-      .addField("『Bot 1 | Nano Bot』 『اسم البوت』", true)
+      .addField("『Bot 1 | Great.』 『اسم البوت』", true)
       .addField("『مصمم البوت REX』", true)
       .addField("『!help^』😘『اذا تبي جميع الاوامر مع اوامر اضافية』😵", true)
 	    .addField("『!help^^』👻『اذا تبي الاوامر العامة』😳", true)
@@ -345,12 +345,6 @@ client.on("message", message => {
 
 ● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ● 
 
-💎『الدعم الفني والمساعدة』💎
-
-!invite | القسم الاول لي اضافه البوت 
-
-!support| القسم الثاني  الدعم الفني و المساعدة
-
 القسم الثالث مصمم البوت | REX
 
 ● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ● 
@@ -411,14 +405,6 @@ client.on("message", message => {
 
 
 ● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ● 
-
-	  
-
-💎『الدعم الفني والمساعدة』💎
-
-!invite | القسم الاول لي اضافه البوت 
-
-!support| القسم الثاني  الدعم الفني و المساعدة
 قسم الثالث مصمم البوت REX
 
 `)
@@ -465,14 +451,6 @@ client.on("message", message => {
 
 
 ● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ● 
-	  
-
-💎『الدعم الفني والمساعدة』💎
-
-!invite | القسم الاول لي اضافه البوت 
-
-!support| القسم الثاني  الدعم الفني و المساعدة
-
 القسم الثالث مصمم البوت | REX 
 
 `)
@@ -785,7 +763,7 @@ client.on("guildCreate", guild => {
   
   
 client.on('ready', () => {
-   client.user.setGame(" !help | !invite ");
+   client.user.setGame(" Great. | SERVER Great. ");
 }); 
 
 client.on("message", message => {
@@ -818,54 +796,17 @@ client.on("message", message => {
   
 });
 
-client.on('message', message => {
-  if (true) {
-if (message.content === '!support') {
-      message.author.send(' |https://discord.gg/nyB4SA4| لـ أي استفسار').catch(e => console.log(e.stack));
 
-    }
-   } 
-  });
   
   
 
-client.on('message', message => {
-     if (message.content === "!support") {
-     let embed = new Discord.RichEmbed()
-  .setAuthor(message.author.username)
-  .setColor("#9B59B6")
-  .addField(" Done | تــــم" , " |  تــــم ارســالك في الخــاص")
-     
-     
-     
-  message.channel.sendEmbed(embed);
-    }
-});
 
 
-client.on('message', message => {
-  if (true) {
-if (message.content === '!invite') {
-      message.author.send(' رابط البوت |  https://discordapp.com/api/oauth2/authorize?client_id=478603670142058496&permissions=2146958583&scope=bot p').catch(e => console.log(e.stack));
 
-    }
-   } 
-  });
-  
+
   
 
-client.on('message', message => {
-     if (message.content === "!invite") {
-     let embed = new Discord.RichEmbed()
-  .setAuthor(message.author.username)
-  .setColor("#9B59B6")
-  .addField(" Done | تــــم" , " |  تــــم ارســالك في الخــاص")
-     
-     
-     
-  message.channel.sendEmbed(embed);
-    }
-});
+
 
 client.on('message', message => {
             if(!message.channel.guild) return;
