@@ -1061,7 +1061,7 @@ rawdownloadreport 2.92 KB
  
  
 client.on('guildMemberAdd', member => {
-const channel = member.guild.channels.find("name","⚠-warns")
+const channel = member.guild.channels.find("name","chat")
 if (member.user.bot) return;
 var Canvas = require('canvas-prebuilt')  
 var jimp = require('jimp')
