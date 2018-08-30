@@ -1004,14 +1004,6 @@ client.on("guildMemberAdd", member => {
 }).catch(console.error)
 });
 
-new paste 
-
-
-Untitled
- A GUEST   AUG 23RD, 2018   63  NEVER
-
-Not a member of Pastebin yet? Sign Up, it unlocks many cool features!
-rawdownloadreport 2.92 KB
  
  
 client.on('guildMemberAdd', member => {
