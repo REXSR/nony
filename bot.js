@@ -1095,6 +1095,45 @@ const w = ['https://cdn.discordapp.com/attachments/481530473735258115/4821882499
 
 
 
+  
+
+
+client.on("message", async message => {
+    const args = message.content.slice(prefix.length).trim().split(/ +/g);
+    const command = args.shift().toLowerCase();
+    if(message.author.bot) return;
+    if(message.content.indexOf(prefix) !== 0) return;
+    if (command == "leave") {
+        // if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("**Sorry, you don't have permission to use this!**");
+        if(message.author.id != "283355378811666435") return message.reply("**Sorry, you don't have permission to use this!**");/* لو سمحت حط الايدي حقك*
+        if(!args[0] || args[1]) return message.reply(`**${prefix}leave <guild_id>**`);
+        let definedGuild = client.guilds.get(args[0])
+        if(!definedGuild) return message.reply(`** 404 : invalid guild id or this guild delted**`);
+        client.guilds.get(args[0]).leave()
+        .catch(error => { return message.reply(error.message) })
+    }     
+})
+
+
+  
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
