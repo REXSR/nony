@@ -1097,7 +1097,7 @@ client.on("message", async message => {
     if(message.content.indexOf(prefix) !== 0) return;
     if (command == "leave") {
         // if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("**Sorry, you don't have permission to use this!**");
-        if(message.author.id != "283355378811666435") return message.reply("**Sorry, you don't have permission to use this!**");/* لو سمحت حط الايدي حقك*
+        if(message.author.id != "283355378811666435") return message.reply("**Sorry, you don't have permission to use this!**");
         if(!args[0] || args[1]) return message.reply(`**${prefix}leave <guild_id>**`);
         let definedGuild = client.guilds.get(args[0])
         if(!definedGuild) return message.reply(`**404:invalid guild id or this guild delted**`);
