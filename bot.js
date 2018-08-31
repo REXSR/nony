@@ -30,9 +30,7 @@ client.user.setGame(`Nothing`,"http://twitch.tv/S-F")
 
 
 
-const Discord = require("discord.js");
 
-const client = new Discord.Client();
 
 var dat = JSON.parse("{}");
 
