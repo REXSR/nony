@@ -833,9 +833,6 @@ client.on("guildCreate", guild => {
 
   
   
-client.on('ready', () => {
-   client.user.setGame("!invite || !support ");
-}); 
 
 client.on("message", message => {
             var args = message.content.substring(prefix.length).split(" ");
