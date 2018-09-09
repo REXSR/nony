@@ -1,6 +1,6 @@
  const Discord = require('discord.js');
 const client = new Discord.Client();
-const perfix = "N-"
+const perfix = "!"
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
     console.log(`in ${client.guilds.size} servers `)
