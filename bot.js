@@ -10,7 +10,7 @@ client.on('ready', () => {
 });
  
 
-let logs = JSON.parse(fs.readFileSync(`./logs.json`, `utf8`)); // BY ! - NourEldien.#8007
+const logs = JSON.parse(fs.readFileSync(`./logs.json`, `utf8`)); // BY ! - NourEldien.#8007
 
 client.on('message', message => {
 
