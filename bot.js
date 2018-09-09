@@ -1,15 +1,14 @@
 
 const Discord = require('discord.js');
 const client = new Discord.Client();
-
+const perfix = "N-"
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
     console.log(`in ${client.guilds.size} servers `)
     console.log(`[NAWAF] ${client.users.size}`)
-    client.user.setStatus("streaming")
+    client.user.setStatus("ldle")
 });
  
-const prefix = "N-"
 
 let logs = JSON.parse(fs.readFileSync(`./logs.json`, `utf8`)); // BY ! - NourEldien.#8007
 
