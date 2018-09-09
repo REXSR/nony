@@ -1,15 +1,12 @@
-
-const Discord = require('discord.js');
+const Discord = require("discord.js");
 const client = new Discord.Client();
-const prefix = "="
-
+const perfix = 'N-';
 client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}!`);
+  console.log(`Logged in as ${client.user.tag} !`);
+        client.user.setActivity("N-help",{type: 'WATCHING'});
+ 
 });
-client.on('ready', () => {
-    client.user.setActivity("=inv || =help || =support",{type: 'Streming'})
 
-});
 
 
 
