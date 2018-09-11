@@ -182,7 +182,6 @@ client.on("message", message => {
   });
  
 
-const Discord = require("discord.js"); // بكج
 const client = new Discord.Client({disableEveryone: true});
 const Canvas = require('canvas') // بكج
 const fs = module.require("fs"); //بكج
