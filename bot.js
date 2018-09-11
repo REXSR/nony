@@ -182,7 +182,7 @@ client.on("message", message => {
   });
  
 
-const client = new Discord.Client({disableEveryone: true});
+const Discord = new Discord.Client({disableEveryone: true});
 const Canvas = require('canvas') // بكج
 const fs = module.require("fs"); //بكج
 const r1 = require('snekfetch'); //بكج
