@@ -12,50 +12,52 @@ client.on('ready', () => {
 
     console.log(`[NAWAF] ${client.users.size}`)
 
-    client.user.setStatus("ldle")
+    client.user.setStatus("streming")
 
 });
 
-  
-client.on('message',async Epic => {
-  if(Epic.content.startsWith(codes + "set")) {
-  if(!Epic.guild.member(Epic.author).hasPermissions('MANAGE_CHANNELS')) return Epic.reply(':x: **ليس لديك الصلاحيات الكافية**');
-  if(!Epic.guild.member(client.user).hasPermissions(['MANAGE_CHANNELS','MANAGE_ROLES_OR_PERMISSIONS'])) return Epic.reply(':x: **ليس معي الصلاحيات الكافية**');
-  Epic.guild.createChannel(`Voice Online : [ ${Epic.guild.members.filter(m => m.voiceChannel).size} ]` , 'voice').then(c => {
-    console.log(`Voice Online Is Activation In ${Epic.guild.name}`);
-    c.overwritePermissions(Epic.guild.id, {
-      CONNECT: false,
-      SPEAK: false
+ const res = JSON.parse(fs.readFileSync('./responses.json' , 'utf8'));
+client.on('message', async message => {
+    let messageArray = message.content.split(" ");
+   if(message.content.startsWith(prefix + "setMsg")) {
+    if(!message.member.hasPermission("MANAGE_GUILD")) return message.channel.send('You don\'t have permission').then(msg => {
+       msg.delete(4500);
+       message.delete(4500);
     });
-    setInterval(() => {
-      c.setName(` onKan :  ${Epic.guild.members.filter(m => m.voiceChannel).size} .`)
-    },1000);
-  });
-  }
-});
-
-
-
-client.on('message',async msg => {
-  if(msg.content.startsWith(p + "set2")) {
-  if(!msg.guild.member(msg.author).hasPermissions('MANAGE_CHANNELS')) return msg.reply('❌ **go play minecraft**');
-  if(!msg.guild.member(client.user).hasPermissions(['MANAGE_CHANNELS'])) return msg.reply('❌ **البوت لا يمتلك صلاحية**');
-  msg.guild.createChannel(`يتم تحضير الروم :[]` , 'voice').then(time => {
-    time.overwritePermissions(msg.guild.id, {
-      CONNECT: false,
-      SPEAK: false
+    
+    if(!messageArray[1]) return message.channel.send('Supply a message!').then(msg => {
+       msg.delete(4500);
+       message.delete(4500);
     });
-  setInterval(() => {
-      var currentTime = new Date(),
-Year = currentTime.getFullYear(),
-Month = currentTime.getMonth() + 1,
-Dat = currentTime.getDate()
-      time.setName(`Members : ◤ → ${client.users.size} ← ◢`);
- },1000);
+    if(!messageArray[2]) return message.channel.send('Suplly a response!').then(msg => {
+       msg.delete(4500);
+       message.delete(4500);
+    });
+    message.reply('Preparing...').then(msg => {
+        setTimeout(() => {
+           msg.edit(':white_check_mark: Done!.'); 
+        },5000);
+    });
+    res[message.guild.id] = {
+        msg: messageArray[1],
+        response: messageArray[2],
+    };
+    fs.writeFile("./responses.json", JSON.stringify(res), (err) => {
+    if (err) console.error(err);
   });
-  }
- 
+   } 
 });
+
+client.on('message', async message => {
+   if(message.content === res[message.guild.id].msg) {
+       message.channel.send(res[message.guild.id].response);
+   }
+}); 
+    
+
+
+
+      
  
    
 
