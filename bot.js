@@ -136,6 +136,11 @@ client.on('message', async message => {
 });
 
 
+
+
+
+
+const get = require('get');
 client.on("message", message => {
     if (message.author.bot || !message.guild) return;
     let score;
