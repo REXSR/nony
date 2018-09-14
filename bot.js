@@ -12,7 +12,7 @@ client.on('ready', () => {
 
     console.log(`[NAWAF] ${client.users.size}`)
 
-    client.user.setStatus("streming")
+    client.user.setStatus("online")
 
 });
 
@@ -69,7 +69,7 @@ client.on('message', async message => {
 
     let messageArray = message.content.split(" ");
 
-   if(message.content.startsWith(prefix + "setMsg")) {
+   if(message.content.startsWith(prefix + "set")) {
 
     if(!message.member.hasPermission("MANAGE_GUILD")) return message.channel.send('You don\'t have permission').then(msg => {
 
@@ -186,13 +186,6 @@ client.on("message", message => {
  
 
 
-client.on('ready', async() => {
-var server = "488828438501654539"; // ايدي السررفر
-var channel = "488828438501654542";//ايدي الروم
-    setInterval(()=>{
-    client.guilds.get(server).channels.get(channel).send('**كودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزدزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودhdhdhزكودزكودزكودزكودزكودزكودزكودزكودزكودز **')
-    },305);
-}) 
 
     
 
