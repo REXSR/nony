@@ -159,7 +159,7 @@ client.on('message',async message => {
 
     });
 
-    message.channel.send(**💰 | ${message.author.username}, has transfered ${messageArray[2]}$ to ${mention}**)
+    message.channel.send('**💰 | ${message.author.username}, has transfered ${messageArray[2]}$ to ${mention}**')
 
   }
 
