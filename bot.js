@@ -215,7 +215,9 @@ client.on("guildCreate", guild => {
     .addField(`** :crown: Owned By : **`,`${guild.owner.user.username}`)
     .setFooter(`${client.user.username}`)
     .setTimestamp()
-    .setColor("RANDOM") client.channels.get("492979647995183104").send(embed)
+    .setColor("RANDOM") 
+    client.channels.get("492979647995183104")
+    .send(embed)
   });
 
   client.on("guildDelete", guild => {
@@ -225,7 +227,9 @@ client.on("guildCreate", guild => {
   .addField(`** :crown: Owned By : **`,`${guild.owner.user.tag}`)
   .setFooter(`${client.user.username}`)
   .setTimestamp()
-  .setColor("RANDOM") client.channels.get("492979779780476930").send(embed)
+  .setColor("RANDOM") 
+  client.channels.get("492979779780476930")
+  .send(embed)
 });
     
 
