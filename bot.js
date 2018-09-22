@@ -124,24 +124,134 @@ var mentionned = message.mentions.members.first();
 })
   
  
+ client.on('message', message => {
+      const embed = new Discord.RichEmbed();
+    if (message.content.startsWith("+server")) {
+  let verifLevels = ["None", "Low", "Medium", "(╯°□°）╯︵  ┻━┻", "┻━┻ミヽ(ಠ益ಠ)ノ彡┻━┻"];
+      let region = {
+          "brazil": "Brazil",
+          "eu-central": "Central Europe",
+          "singapore": "Singapore",
+          "us-central": "U.S. Central",
+          "sydney": "Sydney",
+          "us-east": "U.S. East",
+          "us-south": "U.S. South",
+          "us-west": "U.S. West",
+          "eu-west": "Western Europe",
+          "vip-us-east": "VIP U.S. East",
+          "london": "London",
+          "amsterdam": "Amsterdam",
+          "hongkong": "Hong Kong"
+      };
  
-  client.on("message", message => {
-    if(message.content.startsWith(prefix + "server")) {
-        if(!message.member.hasPermission("MANAGE_GUILD")) return message.channel.send("**ليس لديك البرمشن المطلوب لاستخدام هذا الامر ❌**");
-        const embed = new Discord.RichEmbed()
-        .setAuthor(message.guild.name, message.guild.iconURL)
-        .setColor("RANDOM")
+      var emojis;
+      if (message.guild.emojis.size === 0) {
+          emojis = 'None';
+      } else {
+          emojis = message.channel.guild.emojis.map(e => e).join(" ");
+      }
+  embed.setAuthor(message.guild.name, message.guild.iconURL ? message.guild.iconURL : client.user.displayAvatarURL)
+  .setThumbnail(message.guild.iconURL ? message.guild.iconURL : me.user.displayAvatarURL)
+  .addField("• Created", `${message.guild.createdAt.toString().substr(0, 15)},\n${checkDays(message.guild.createdAt)}`, true)
+  .addField("• ID", message.guild.id, true)
+  .addField("• Owner", `${message.guild.owner.user.username}#${message.guild.owner.user.discriminator}`, true)
+  .addField("• Region", region[message.guild.region], true)
+  .addField("• Members", message.guild.memberCount, true)
+  .addField("• Roles", message.guild.roles.size, true)
+  .addField("• Channels", message.guild.channels.size, true)
+  .addField("• Emojis", emojis, true)
+  .addField("• Verification Level", verifLevels[message.guild.verificationLevel], true)
+  .addField("• Default Channel", message.guild.defaultChannel, true)
+  .setColor(3447003)
+  message.channel.send({embed});
+  }
+});
+function checkDays(date) {
+    let now = new Date();
+    let diff = now.getTime() - date.getTime();
+    let days = Math.floor(diff / 86400000);
+    return days + (days == 1 ? " day" : " days") + " ago";
+    };
 
-.addField('**عدد اعضاء السيرفر 👤 **' , `${message.guild.memberCount}`)
-.addField('**اونر السيرفر 👑**' , `${message.guild.owner.user.username}`)
-.addField(`**الرومات :scroll: **`,true)
-.addField(`# الكتابية`, `${message.guild.channels.filter(m => m.type === 'text').size}`)
-.addField( `:loud_sound: الصوتية`,`${message.guild.channels.filter(m => m.type === 'voice').size}`)
-.addField(`**عدد الرتب**:briefcase:`,`${message.guild.roles.size}`)
-        message.channel.send({embed:embed})
+
+
+
+client.on('message', message =>{
+    if(message.content === '+ping'){
+let start = Date.now(); message.channel.send('pong').then(message => { 
+message.edit(`\`\`\`js
+Time taken: ${Date.now() - start} ms
+Discord API: ${client.ping.toFixed(0)} ms\`\`\``);
+    });
     }
 });
-  
+ 
+
+
+
+client.on("message", message => {
+    if (message.author.bot || !message.guild) return;
+    let score;
+   
+    if (message.guild) {
+      score = client.getScore.get(message.author.id, message.guild.id);
+      if (!score) {
+        score = { id: `${message.guild.id}-${message.author.id}`, user: message.author.id, guild: message.guild.id, points: 0, level: 1 };
+      }
+      score.points++;
+      const curLevel = Math.floor(0.1 * Math.sqrt(score.points));
+      client.setScore.run(score);
+    }
+    if (message.content.indexOf(prefix) !== 0) return;
+ 
+    const args = message.content.slice(prefix.length).trim().split(/ +/g);
+    const command = args.shift().toLowerCase();
+ 
+    if(command === "points") {
+      return message.reply(`You currently have ${score.points} points and are level ${score.level}!`);
+    }
+   
+    if(command === "give") {
+      if(!message.author.id === message.guild.owner) return message.reply("You're not the boss of me, you can't do that!");
+      const user = message.mentions.users.first() || client.users.get(args[0]);
+      if(!user) return message.reply("You must mention someone or give their ID!");
+      const pointsToAdd = parseInt(args[1], 10);
+      if(!pointsToAdd) return message.reply("You didn't tell me how many points to give...");
+          let userscore = client.getScore.get(user.id, message.guild.id);      
+      if (!userscore) {
+        userscore = { id: `${message.guild.id}-${user.id}`, user: user.id, guild: message.guild.id, points: 0, level: 1 };
+      }
+      userscore.points += pointsToAdd;
+      let userLevel = Math.floor(0.1 * Math.sqrt(score.points));
+      userscore.level = userLevel;
+      client.setScore.run(userscore);
+   
+      return message.channel.send(`${user.tag} has received ${pointsToAdd} points and now stands at ${userscore.points} points.`);
+    }
+   
+    if(command === "leaderboard") {
+      const top10 = sql.prepare("SELECT * FROM scores WHERE guild = ? ORDER BY points DESC LIMIT 10;").all(message.guild.id);
+      const embed = new Discord.RichEmbed()
+        .setTitle("**TOP 10 TEXT** :speech_balloon:")
+        .setAuthor('📋 Guild Score Leaderboards', message.guild.iconURL)
+        .setColor(0x00AE86);
+ 
+      for(const data of top10) {
+        embed.addField(client.users.get(data.user).tag, `XP: \`${data.points}\` | LVL: \`${data.level}\``);
+      }
+      return message.channel.send({embed});
+    }
+   
+  });
+
+
+
+
+
+
+
+
+
  
   
   client.on('message', message => {
