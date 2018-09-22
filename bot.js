@@ -467,8 +467,23 @@ client.on("guildCreate", guild => {
 });
     
 
-   
+client.on('message', message => {
 
+  if(message.content === '+support') {
+
+  const embed = new Discord.RichEmbed()
+
+  .setTitle('اضعط هنا')
+
+  .setURL('https://discord.gg/BgbcJPk')
+
+  .setColor('RANDOM')
+
+  message.channel.send({embed: embed});
+
+  }
+
+});
 
 
 
