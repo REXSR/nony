@@ -188,7 +188,7 @@ Discord API: ${client.ping.toFixed(0)} ms\`\`\``);
  
 
 
-
+const fs = require('fs');
  let logs = JSON.parse(fs.readFileSync(`./logs.json`, `utf8`)); // BY ! - NourEldien.#8007
 client.on('message', message => {
   if(!logs[message.guild.id]) logs[message.guild.id] = {
