@@ -1,5 +1,4 @@
 const Discord = require('discord.js');
-
 const client = new Discord.Client();
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
@@ -12,49 +11,53 @@ client.on('ready', () => {
  
 
 
-  client.on('message', message => {
-          
+  
 
-           if (message.content.startsWith(prefix + "id")) {
-                     if(!message.channel.guild) return message.reply(`هذا الأمر فقط ل السيرفرات ❌`);
 
-                message.guild.fetchInvites().then(invs => {
-      let member = client.guilds.get(message.guild.id).members.get(message.author.id);
-      let personalInvites = invs.filter(i => i.inviter.id === message.author.id);
-      let inviteCount = personalInvites.reduce((p, v) => v.uses + p, 0);
-      var moment = require('moment');
-      var args = message.content.split(" ").slice(1);
-let user = message.mentions.users.first();
-var men = message.mentions.users.first();
- var heg;
- if(men) {
-     heg = men
- } else {
-     heg = message.author
- }
-var mentionned = message.mentions.members.first();
-  var h;
- if(mentionned) {
-     h = mentionned
- } else {
-     h = message.member
- }
-        moment.locale('ar-TN');
-      var id = new  Discord.RichEmbed()
-       
-    .setColor("#0a0909")
- .setThumbnail(message.author.avatarURL)
-.addField(': تاريخ دخولك للديسكورد',` \`${moment(heg.createdTimestamp).format('YYYY/M/D HH:mm:ss')} \`**\n ${moment(heg.createdTimestamp).fromNow()}**` ,true) 
-.addField(': تاريخ دخولك لسيرفرنا', `\`${moment(h.joinedAt).format('YYYY/M/D HH:mm:ss')}  \` **\n ${moment(h.joinedAt).fromNow()} **`, true)
-.setFooter(message.author.username,'https://images-ext-2.discordapp.net/external/JpyzxW2wMRG2874gSTdNTpC_q9AHl8x8V4SMmtRtlVk/https/orcid.org/sites/default/files/files/ID_symbol_B-W_128x128.gif')  
-    message.channel.sendEmbed(id);
-})
-}
+    client.on('message', message => {
+    let args = message.content.split(' ').slice(1);
+if(message.content.split(' ')[0] == 'لون'){
+if (message.channel.id !== "493440361985998860") return;
+     const embedd = new Discord.RichEmbed()
+.setFooter('Requested by '+message.author.username, message.author.avatarURL)
+.setDescription(`**There's No Color With This Number ** ❌ `)
+.setColor(`ff0000`)
+
+if(!isNaN(args) && args.length > 0)
+
+
+ var a = message.guild.roles.find("name",`${args}`)
+          if(!a)return;
+          if (a.name > 250 || a.name < 1) return;
+const embed = new Discord.RichEmbed()
+              
+.setFooter('Requested by '+message.author.username, message.author.avatarURL)
+.setDescription(`**Color Changed Successfully** ✅ `)
+
+.setColor(`${a.hexColor}`)
+message.channel.sendEmbed(embed);
+    if (!args)return;
+setInterval(function(){})
+            let count = 0;
+            let ecount = 0;
+  for(let x = 1; x < 201; x++){
+     
+      message.member.removeRole(message.guild.roles.find("name",`${x}`))
     
+      }
+          message.member.addRole(message.guild.roles.find("name",`${args}`));
+  
+      
+}  
+   
 
          
-     });
   
+client.on('message', message => {
+    if (message.content === 'رابط') {
+        message.author.send('https://discord.gg/SGRjAKR');
+      }
+});  
  
    
 
@@ -75,23 +78,8 @@ var mentionned = message.mentions.members.first();
      
   
 
-  client.on('message', message => {
-
-  if(message.content === '+inv') {
-
-  const embed = new Discord.RichEmbed()
-
-  .setTitle('اضعط هنا')
-
-  .setURL('https://discordapp.com/oauth2/authorize?client_id=488456783531343872&scope=bot&permissions=1')
-
-  .setColor('RANDOM')
-
-  message.channel.send({embed: embed});
-
-  }
-
-});   
+  
+  
     
     
   client.on('message', async message => {
@@ -188,7 +176,7 @@ function checkDays(date) {
 
 
 client.on('message', message =>{
-    if(message.content === '+ping'){
+    if(message.content === 'ping'){
 let start = Date.now(); message.channel.send('pong').then(message => { 
 message.edit(`\`\`\`js
 Time taken: ${Date.now() - start} ms
@@ -198,7 +186,7 @@ Discord API: ${client.ping.toFixed(0)} ms\`\`\``);
 });
  
 
-const perfix = '+'
+const perfix = '#'
 const fs = require('fs');
  let logs = JSON.parse(fs.readFileSync(`./logs.json`, `utf8`)); // BY ! - NourEldien.#8007
 client.on('message', message => {
@@ -478,23 +466,8 @@ client.on("guildCreate", guild => {
 });
     
 
-client.on('message', message => {
 
-  if(message.content === '+support') {
-
-  const embed = new Discord.RichEmbed()
-
-  .setTitle('اضعط هنا')
-
-  .setURL('https://discord.gg/BgbcJPk')
-
-  .setColor('RANDOM')
-
-  message.channel.send({embed: embed});
-
-  }
-
-});
+  
 
 
 
