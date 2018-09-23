@@ -14,7 +14,8 @@ client.on('ready', () => {
     
     
 client.on('message', message => {
-           if (message.content.startsWith(prefix + "id")) {
+         var perfix = '+'
+    if (message.content.startsWith(prefix + "id")) {
                      if(!message.channel.guild) return message.reply(`هذا الأمر فقط ل السيرفرات ❌`);
 
                 message.guild.fetchInvites().then(invs => {
