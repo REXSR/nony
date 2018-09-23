@@ -1,15 +1,9 @@
 const Discord = require('discord.js');
 
 const client = new Discord.Client();
-
-const perfix = "+"
-
 client.on('ready', () => {
-
     console.log(`Logged in as ${client.user.tag}!`);
-
     console.log(`in ${client.guilds.size} servers `)
-
     console.log(`[NAWAF] ${client.users.size}`)
 
     client.user.setStatus("online")
@@ -20,8 +14,6 @@ client.on('ready', () => {
     
     
 client.on('message', message => {
-                    var prefix = "+";
-
            if (message.content.startsWith(prefix + "id")) {
                      if(!message.channel.guild) return message.reply(`هذا الأمر فقط ل السيرفرات ❌`);
 
@@ -187,7 +179,7 @@ Discord API: ${client.ping.toFixed(0)} ms\`\`\``);
 });
  
 
-
+const perfix = '+'
 const fs = require('fs');
  let logs = JSON.parse(fs.readFileSync(`./logs.json`, `utf8`)); // BY ! - NourEldien.#8007
 client.on('message', message => {
