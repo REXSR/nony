@@ -9,19 +9,15 @@ client.on('ready', () => {
     client.user.setStatus("online")
 
 });
-
  
-    
-
-
-
-
-
 
 
   client.on('message', message => {
-           if (message.content.startsWith(prefix + "id")) {  
-           if(!message.channel.guild) return message.reply(`هذا الأمر فقط ل السيرفرات ❌`);
+          
+
+           if (message.content.startsWith(prefix + "id")) {
+                     if(!message.channel.guild) return message.reply(`هذا الأمر فقط ل السيرفرات ❌`);
+
                 message.guild.fetchInvites().then(invs => {
       let member = client.guilds.get(message.guild.id).members.get(message.author.id);
       let personalInvites = invs.filter(i => i.inviter.id === message.author.id);
@@ -51,9 +47,7 @@ var mentionned = message.mentions.members.first();
 .addField(': تاريخ دخولك للديسكورد',` \`${moment(heg.createdTimestamp).format('YYYY/M/D HH:mm:ss')} \`**\n ${moment(heg.createdTimestamp).fromNow()}**` ,true) 
 .addField(': تاريخ دخولك لسيرفرنا', `\`${moment(h.joinedAt).format('YYYY/M/D HH:mm:ss')}  \` **\n ${moment(h.joinedAt).fromNow()} **`, true)
 .addField(` :لقد قمت بدعوة `, ` ${inviteCount} `)
-
-
-.setFooter(message.author.username, message.author.avatarURL)  
+.setFooter(message.author.username,'https://images-ext-2.discordapp.net/external/JpyzxW2wMRG2874gSTdNTpC_q9AHl8x8V4SMmtRtlVk/https/orcid.org/sites/default/files/files/ID_symbol_B-W_128x128.gif')  
     message.channel.sendEmbed(id);
 })
 }
@@ -61,6 +55,16 @@ var mentionned = message.mentions.members.first();
 
          
      });
+  
+ 
+   
+
+
+
+
+
+  
+
   
  
  
