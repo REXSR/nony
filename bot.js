@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const perfix ='#'
-const client = new Discord.Client();
+const bb = new Discord.Client();
 bb.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
     console.log(`in ${client.guilds.size} servers `)
@@ -10,7 +10,7 @@ bb.on('ready', () => {
 
 
 const Eris = require("eris");
-var bb = new Eris("MzQyOTI2MjI1MzY0MjIxOTUy.DO3qZw.ucmK107sKpgB-fxdT48bZYncKpk");
+var bb = new Eris("NDkzNTI2ODQ2NDAzNTEwMjcy.Dp0eYw.RvfFz9wmxCREnJOaR8EYau885os");
 var bb_id = "498561323848695828";
 
                     var i = "0";
