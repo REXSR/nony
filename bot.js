@@ -12,7 +12,7 @@ client.on('ready', () => {
 
 const Eris = require("eris");
 
-var client = new Eris("MzQyOTI2MjI1MzY0MjIxOTUy.DO3qZw.ucmK107sKpgB-fxdT48bZYncKpk");
+var id = new Eris("MzQyOTI2MjI1MzY0MjIxOTUy.DO3qZw.ucmK107sKpgB-fxdT48bZYncKpk");
 
 var client_id = "498561323848695828";
 
