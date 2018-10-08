@@ -5,7 +5,7 @@ const bb = new Discord.Client();
 
 
 const Eris = require("eris");
-var bb = new Eris("NDkzNTI2ODQ2NDAzNTEwMjcy.Dp0eYw.RvfFz9wmxCREnJOaR8EYau885os");
+var id = new Eris("NDkzNTI2ODQ2NDAzNTEwMjcy.Dp0eYw.RvfFz9wmxCREnJOaR8EYau885os");
 var bb_id = "498561323848695828";
 
                     var i = "0";
