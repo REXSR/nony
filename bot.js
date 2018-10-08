@@ -1,12 +1,7 @@
 const Discord = require('discord.js');
 const perfix ='#'
 const bb = new Discord.Client();
-bb.on('ready', () => {
-    console.log(`Logged in as ${client.user.tag}!`);
-    console.log(`in ${client.guilds.size} servers `)
-    console.log(`[NAWAF] ${client.users.size}`)
-    client.user.setStatus("online")
-});
+
 
 
 const Eris = require("eris");
