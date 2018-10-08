@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const perfix ='#'
 const client = new Discord.Client();
-client.on('ready', () => {
+bb.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
     console.log(`in ${client.guilds.size} servers `)
     console.log(`[NAWAF] ${client.users.size}`)
@@ -9,33 +9,33 @@ client.on('ready', () => {
 });
 
 
-
 const Eris = require("eris");
-var client_id = "498561323848695828";
+var bb = new Eris("MzQyOTI2MjI1MzY0MjIxOTUy.DO3qZw.ucmK107sKpgB-fxdT48bZYncKpk");
+var bb_id = "498561323848695828";
 
                     var i = "0";
 
                     var x = "0";
 
-client.on("voiceChannelJoin", (msg) => {
+bb.on("voiceChannelJoin", (msg) => {
 
     x++;
 
-    client.editChannel(client_id, { name : "onpower ⇏「" + x + "」"});
+    bb.editChannel(bb_id, { name : "onpower ⇏「" + x + "」"});
 
 });
 
-client.on("voiceChannelLeave", (msg) => {
+bb.on("voiceChannelLeave", (msg) => {
 
     x--;
 
-    client.editChannel(client_id, { name : "onpower ⇏「" + x + "」"});
+    bb.editChannel(bb_id, { name : "onpower ⇏「" + x + "」"});
 
 });
 
-client.on("messageCreate", (msg) => {
+bb.on("messageCreate", (msg) => {
 
-    if(msg.author.id !== "283355378811666435") return client.createMessage('__**This Command is only for the bot Owner**__');
+    if(msg.author.id !== "283355378811666435") return bb.createMessage('__**This Command is only for the bot Owner**__');
 
     if(msg.content === "#voice") {
 
@@ -67,9 +67,9 @@ client.on("messageCreate", (msg) => {
 
     console.log(x);
 
-    client.createMessage(msg.channel.id, "onpower Online Members Now Are: **"+x+"** Members!");
+    bb.createMessage(msg.channel.id, "onpower Online Members Now Are: **"+x+"** Members!");
 
-    client.editChannel(client_id, { name : "onpower ⇏「"+x+"」"});
+    bb.editChannel(bb, { name : "onpower ⇏「"+x+"」"});
 
     messages = [];
 
@@ -94,4 +94,4 @@ client.on("messageCreate", (msg) => {
 
 
 
-client.login(process.env.BOT_TOKEN);
+bb.login(process.env.BOT_TOKEN);
