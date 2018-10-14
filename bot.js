@@ -4,11 +4,9 @@ const prefix = "-";
 console.log("BOT ONLINE");
  
 
-let points = JSON.parse(fs.readFileSync('./fkk/3wasmPTS.json', 'utf8'));
 
       
 
-var prefix = "-";
 
 
 client.on('message', message => {
