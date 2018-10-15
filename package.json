@@ -21,6 +21,8 @@
     "canvas": "^1.6.10",
 
     "dateformat": "^3.0.3",
+    
+    "points": "3.1.0",
 
     "discord.js": "^11.3.2",
 
