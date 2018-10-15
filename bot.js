@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const prefix = "-";
+const prefix = "#";
+const points = require('points');
 console.log("BOT ONLINE");
  
 
@@ -17,7 +18,7 @@ client.on('message', message => {
 
         };
 
-    if (message.content.startsWith(prefix + 'لغز')) {
+    if (message.content.startsWith(prefix + 'لغز#')) {
 
         if(!message.channel.guild) return
 
