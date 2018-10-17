@@ -24,7 +24,7 @@ client.on('message', message => {
 
      
 
-    const type = require('./fkk/quiz.json');
+    const type = require('quiz.json');
 
     const item = type[Math.floor(Math.random() * type.length)];
 
@@ -84,7 +84,7 @@ client.on('message', message => {
     if (message.content.startsWith(prefix + 'فكك')) {
         if(!message.channel.guild) return
      
-    const type = require('./fkk/fkkk.json');
+    const type = require('fkkk.json');
     const item = type[Math.floor(Math.random() * type.length)];
     const filter = response => {
             return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
@@ -121,7 +121,7 @@ if (message.content.startsWith(prefix + 'نقاطي')) {
     .setDescription(`نقاطك: \`${userData.points}\``)
     message.channel.sendEmbed(embed)
   }
-  fs.writeFile("./fkk/3wasmPTS.json", JSON.stringify(points), (err) => {
+  fs.writeFile("3wasmPTS.json", JSON.stringify(points), (err) => {
     if (err) console.error(err)
   })
 });
