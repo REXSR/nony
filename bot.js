@@ -3,7 +3,7 @@ const client = new Discord.Client();
 const prefix = "#";
 const fs = require('fs');
 const points = require('points');
-console.log("BOT ONLINE.");
+console.log("BOT ONLINE..");
  
 
 
