@@ -19,7 +19,7 @@ client.on('message', message => {
 
         };
 
-    if (message.content.startsWith(prefix + 'لغز#')) {
+    if (message.content.startsWith(prefix + 'لغز')) {
 
         if(!message.channel.guild) return
 
