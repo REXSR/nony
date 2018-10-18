@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const length = require('length');
 
 const client = new Discord.Client();
 
@@ -128,11 +129,8 @@ const roles = config.roleToDisco;
 
  
 
-client.on("ready", () => {
 
-    client.user.setPresence({ game: { name: NewYork.` }, type: 0 });
 
-    console.log("NewYork.");
 
 });
 
