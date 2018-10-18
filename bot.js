@@ -52,46 +52,61 @@ client.on('ready', () => {
 
 });
 
- 
-let points = JSON.parse(fs.readFileSync('./Points.json', 'utf8'));
+ let points = JSON.parse(fs.readFileSync('./Points.json', 'utf8')); // يقوم بقراءه ملف النقاط , والمسار حق النقاطس العام لجميع الأوامر
 client.on('message', message => {
 if (!points[message.author.id]) points[message.author.id] = {
-    points: 50,
+    points: 0,
   };
-if (message.content.startsWith(prefix + 'فكك')) { 
+if (message.content.startsWith(prefix + 'فكك')) {
     if(!message.channel.guild) return message.reply('**هذا الأمر للسيرفرات فقط**').then(m => m.delete(3000));
 
-const type = require('fakk.json'); 
-const item = type[Math.floor(Math.random() * type.length)]; 
-const answer = item.answer 
-const filter = response => { 
+const type = require('./fkkk.json');
+const item = type[Math.floor(Math.random() * type.length)];
+const filter = response => {
     return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
 };
-message.channel.send('**لديك 15 ثانيه لتفكك الكلمه **').then(msg => {
-    let embed = new Discord.RichEmbed()
-    .setColor('#000000')
-    .setFooter("لعبة فكك", 'https://cdn.discordapp.com/avatars/464357784247599104/98777979b17586bc1af26beaa423e818.png')
-    .setDescription(`**قم بكتابه الكلمه مفككه : ${item.type}**`)
-
-    msg.channel.sendEmbed(embed).then(() => {
+message.channel.send('**لديك 15 ثانيه لتفكيك الكلمه**').then(msg => {
+let embed = new Discord.RichEmbed()
+.setColor("04791c")
+ .setImage(`${item.type}`)
+msg.channel.send(embed).then(() => {
         message.channel.awaitMessages(filter, { maxMatches: 1, time: 15000, errors: ['time'] })
         .then((collected) => {
-        message.channel.send(`${collected.first().author} ✅ **الاجابه صحيحه**`); //mohamed192837465#7033صاحب الكود
-
-        console.log(`[Typing] ${collected.first().author} typed the word.`);
-            let won = collected.first().author; 
-            points[won.id].points++;
-          })
-          .catch(collected => { 
-            message.channel.send(`:x: **ماحد قال الاجابه الصحيحه**`);
-            console.log(`[Typing] ماحد فكك الكلمه `);
+         const sh = new Discord.RichEmbed()
+.setColor("04791c")
+.setDescription('**? |Good Job +1P**')
+.addField('Type نقاطي', 'لي معرفة نقاطك' , true)
+.setFooter(message.author.username, message.author.avatarURL)
+message.channel.sendEmbed(sh);
+        let won = collected.first().author;
+                points[won.id].points++;
+        })
+           .catch(collected => { // في حال لم يقم أحد بالإجابة
+            message.channel.send(`?? |**Time Is End**`);
+           })
+          fs.writeFile("./Points.json", JSON.stringify(points), (err) => {
+    if (err) console.error(err)
           })
         })
     })
 }
+})
+client.on('message', message => {
+if (message.content.startsWith(prefix + 'نقاطي')) {
+	if(!message.channel.guild) return message.reply('**هذا الأمر للسيرفرات فقط**').then(m => m.delete(3000));
+	let userData = points[message.author.id];
+	let embed = new Discord.RichEmbed()
+    .setAuthor(`${message.author.tag}`, message.author.avatarURL)
+	.setColor('#000000')
+	.setDescription(`نقاطك: \`${userData.points}\``)
+	message.channel.sendEmbed(embed)
+  }
+  fs.writeFile("./Points.json", JSON.stringify(points), (err) => {
+    if (err) console.error(err)
+  })
 });
 
-
+    .
     
 
 
