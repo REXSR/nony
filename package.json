@@ -15,6 +15,7 @@
     "ffmpeg": "0.0.4",
     "ffmpeg-binaries": "^3.2.2-3",
     "fs": "0.0.2",
+    "length": "0.0.1",
     "get-youtube-id": "^1.0.0",
     "jimp": "^0.2.28",
     "moment": "^2.22.1",
