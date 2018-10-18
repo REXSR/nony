@@ -129,6 +129,10 @@ const roles = config.roleToDisco;
 
  
 
+client.on("ready", () => {
+    client.user.setPresence({ game: { name: `NewYork` }, type: 0 });
+    console.log("Disco role bot online! Created by i am toast.");
+});
 
 
 
