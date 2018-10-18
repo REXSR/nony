@@ -1,5 +1,5 @@
 {
-  "name": "discord.js-heroku",
+  "name": "discord.js-h",
   "version": "1.0.0",
   "description": "Discord.js bot on Heroku",
   "main": "bot.js",
