@@ -57,7 +57,7 @@ client.on('message', message => {
     if (message.content.startsWith(prefix + 'فكك')) {
         if(!message.channel.guild) return
      
-    const type = require('./fkk/fkkk.json');
+    const type = require('./fkkk.json');
     const item = type[Math.floor(Math.random() * type.length)];
     const filter = response => {
             return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
@@ -69,7 +69,7 @@ client.on('message', message => {
                     message.channel.awaitMessages(filter, { maxMatches: 1, time: 10000, errors: ['time'] })
                     .then((collected) => {
             message.channel.send(`${collected.first().author} ✅ **مبروك لقد كسبت نقطه
-    لمعرفة نقطاك الرجاء كتابة نقاطي**`);
+    لمعرفة نقطاك الرجاء كتابة -نقاطي**`);
             console.log(`[Typing] ${collected.first().author} typed the word.`);
                 let userData = points[message.author.id];
                 userData.points++;
